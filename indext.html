@@ -1445,8 +1445,513 @@ Example
   Loading..
 </button>
 
+                                                Bootstrap 5 Pagination
+Basic Pagination
+If you have a web site with lots of pages, you may wish to add some sort of pagination to each page.
 
-<!-- Continue from BS5 pagination -->
+Previous
+1
+2
+3
+Next
+To create a basic pagination, add the .pagination class to an <ul> element. Then add the .page-item to each <li> element and a .page-link class to each link inside <li>:
+
+Example
+<ul class="pagination">
+  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+  <li class="page-item"><a class="page-link" href="#">1</a></li>
+  <li class="page-item"><a class="page-link" href="#">2</a></li>
+  <li class="page-item"><a class="page-link" href="#">3</a></li>
+  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+</ul>
+Active State
+The .active class is used to "highlight" the current page:
+
+Previous
+1
+2
+3
+Next
+Example
+<ul class="pagination">
+  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+  <li class="page-item"><a class="page-link" href="#">1</a></li>
+  <li class="page-item active"><a class="page-link" href="#">2</a></li>
+  <li class="page-item"><a class="page-link" href="#">3</a></li>
+  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+</ul>
+ADVERTISEMENT
+
+Disabled State
+The .disabled class is used for un-clickable links:
+
+Previous
+1
+2
+3
+Next
+Example
+<ul class="pagination">
+  <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+  <li class="page-item"><a class="page-link" href="#">1</a></li>
+  <li class="page-item"><a class="page-link" href="#">2</a></li>
+  <li class="page-item"><a class="page-link" href="#">3</a></li>
+  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+</ul>
+Pagination Sizing
+Pagination blocks can also be sized to a larger or a smaller size:
+
+Previous
+1
+2
+3
+Next
+Previous
+1
+2
+3
+Next
+Add class .pagination-lg for larger blocks or .pagination-sm for smaller blocks:
+
+Example
+<ul class="pagination pagination-lg">
+  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+  <li class="page-item"><a class="page-link" href="#">1</a></li>
+  <li class="page-item"><a class="page-link" href="#">2</a></li>
+  <li class="page-item"><a class="page-link" href="#">3</a></li>
+  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+</ul>
+
+<ul class="pagination pagination-sm">
+  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+  <li class="page-item"><a class="page-link" href="#">1</a></li>
+  <li class="page-item"><a class="page-link" href="#">2</a></li>
+  <li class="page-item"><a class="page-link" href="#">3</a></li>
+  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+</ul>
+Pagination Alignment
+Use utility classes to change the alignment of the pagination:
+
+Previous
+1
+2
+3
+Next
+Previous
+1
+2
+3
+Next
+Previous
+1
+2
+3
+Next
+Example
+<!-- Default (left-aligned) -->
+<ul class="pagination" style="margin:20px 0">
+  <li class="page-item">...</li>
+</ul>
+
+<!-- Center-aligned -->
+<ul class="pagination justify-content-center" style="margin:20px 0">
+  <li class="page-item">...</li>
+</ul>
+
+<!-- Right-aligned -->
+<ul class="pagination justify-content-end" style="margin:20px 0">
+  <li class="page-item">...</li>
+</ul>
+Breadcrumbs
+Another form for pagination, is breadcrumbs:
+
+Photos
+Summer 2017
+Italy
+Rome
+The .breadcrumb and .breadcrumb-item classes indicates the current page's location within a navigational hierarchy:
+
+Example
+<ul class="breadcrumb">
+  <li class="breadcrumb-item"><a href="#">Photos</a></li>
+  <li class="breadcrumb-item"><a href="#">Summer 2017</a></li>
+  <li class="breadcrumb-item"><a href="#">Italy</a></li>
+  <li class="breadcrumb-item active">Rome</li>
+</ul>
+
+                                                        Bootstrap 5 List Groups
+Basic List Groups
+The most basic list group is an unordered list with list items:
+
+First item
+Second item
+Third item
+To create a basic list group, use an <ul> element with class .list-group, and <li> elements with class .list-group-item:
+
+Example
+<ul class="list-group">
+  <li class="list-group-item">First item</li>
+  <li class="list-group-item">Second item</li>
+  <li class="list-group-item">Third item</li>
+</ul>
+Active State
+Active item
+Second item
+Third item
+Use the .active class to highlight the current item:
+
+Example
+<ul class="list-group">
+  <li class="list-group-item active">Active item</li>
+  <li class="list-group-item">Second item</li>
+  <li class="list-group-item">Third item</li>
+</ul>
+ADVERTISEMENT
+
+List Group With Linked Items
+First item
+Second item
+Third item
+To create a list group with linked items, use <div> instead of <ul> and <a> instead of <li>. Optionally, add the .list-group-item-action class if you want a grey background color on hover:
+
+Example
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action">First item</a>
+  <a href="#" class="list-group-item list-group-item-action">Second item</a>
+  <a href="#" class="list-group-item list-group-item-action">Third item</a>
+</div>
+Disabled Item
+The .disabled class adds a lighter text color to the disabled item. And when used on links, it will remove the hover effect:
+
+Disabled item
+Disabled item
+Third item
+Example
+<div class="list-group">
+  <a href="#" class="list-group-item disabled">Disabled item</a>
+  <a href="#" class="list-group-item disabled">Disabled item</a>
+  <a href="#" class="list-group-item">Third item</a>
+</div>
+Flush / Remove Borders
+Use the .list-group-flush class to remove some borders and rounded corners:
+
+First item
+Second item
+Third item
+Fourth item
+Example
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">First item</li>
+  <li class="list-group-item">Second item</li>
+  <li class="list-group-item">Third item</li>
+  <li class="list-group-item">Fourth item</li>
+</ul>
+Numbered List Groups
+Use the .list-group-numbered class to create list items with numbers in front of them:
+
+First item
+Second item
+Third item
+Example
+<ol class="list-group list-group-numbered">
+  <li class="list-group-item">First item</li>
+  <li class="list-group-item">Second item</li>
+  <li class="list-group-item">Third item</li>
+</ol>
+Horizontal List Groups
+If you want the list items to display horizontally instead of vertically (side by side instead of on top of each other), add the .list-group-horizontal class to .list-group:
+
+First item
+Second item
+Third item
+Fourth item
+Example
+<ul class="list-group list-group-horizontal">
+  <li class="list-group-item">First item</li>
+  <li class="list-group-item">Second item</li>
+  <li class="list-group-item">Third item</li>
+  <li class="list-group-item">Fourth item</li>
+</ul>
+Contextual Classes
+Contextual classes can be used to add color to the list items:
+
+Success item
+Secondary item
+Info item
+Warning item
+Danger item
+Primary item
+Dark item
+Light item
+The classes for coloring list-items are: .list-group-item-success, list-group-item-secondary, list-group-item-info, list-group-item-warning, .list-group-item-danger, .list-group-item-primary, list-group-item-dark and list-group-item-light,:
+
+Example
+<ul class="list-group">
+  <li class="list-group-item list-group-item-success">Success item</li>
+  <li class="list-group-item list-group-item-secondary">Secondary item</li>
+  <li class="list-group-item list-group-item-info">Info item</li>
+  <li class="list-group-item list-group-item-warning">Warning item</li>
+  <li class="list-group-item list-group-item-danger">Danger item</li>
+  <li class="list-group-item list-group-item-primary">Primary item</li>
+  <li class="list-group-item list-group-item-dark">Dark item</li>
+  <li class="list-group-item list-group-item-light">Light item</li>
+</ul>
+Link items with Contextual Classes
+Action item
+Success item
+Secondary item
+Info item
+Warning item
+Danger item
+Primary item
+Dark item
+Light item
+Example
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action">Action item</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-success">Success item</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">Secondary item</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-info">Info item</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Warning item</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-danger">Danger item</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-primary">Primary item</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Dark item</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-light">Light item</a>
+</div>
+List Group with Badges
+Combine .badge classes with utility/helper classes to add badges inside the list group:
+
+Inbox
+12
+Ads
+50
+Junk
+99
+Example
+<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Inbox
+    <span class="badge bg-primary rounded-pill">12</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Ads
+    <span class="badge bg-primary rounded-pill">50</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Junk
+    <span class="badge bg-primary rounded-pill">99</span>
+  </li>
+</ul>
+
+                                            Bootstrap 5 Cards
+Cards
+A card in Bootstrap 5 is a bordered box with some padding around its content. It includes options for headers, footers, content, colors, etc.
+
+image
+John Doe
+Some example text some example text. John Doe is an architect and engineer
+
+Basic Card
+A basic card is created with the .card class, and content inside the card has a .card-body class:
+
+Basic card
+Example
+<div class="card">
+  <div class="card-body">Basic card</div>
+</div>
+Header and Footer
+Header
+Content
+Footer
+The .card-header class adds a heading to the card and the .card-footer class adds a footer to the card:
+
+Example
+<div class="card">
+  <div class="card-header">Header</div>
+  <div class="card-body">Content</div>
+  <div class="card-footer">Footer</div>
+</div>
+Contextual Cards
+To add a background color the card, use contextual classes (.bg-primary, .bg-success, .bg-info, .bg-warning, .bg-danger, .bg-secondary, .bg-dark and .bg-light.
+
+Example
+Basic card
+
+Primary card
+
+Success card
+
+Info card
+
+Warning card
+
+Danger card
+
+Secondary card
+
+Dark card
+
+Light card
+ADVERTISEMENT
+
+Titles, text, and links
+Card title
+Some example text. Some example text.
+
+Card link Another link
+Use .card-title to add card titles to any heading element. The .card-text class is used to remove bottom margins for a <p> element if it is the last child (or the only one) inside .card-body. The .card-link class adds a blue color to any link, and a hover effect.
+
+Example
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Card title</h4>
+    <p class="card-text">Some example text. Some example text.</p>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+Card Images
+Card image
+John Doe
+Some example text some example text. John Doe is an architect and engineer
+
+Jane Doe
+Some example text some example text. Jane Doe is an architect and engineer
+
+Card image
+Add .card-img-top or .card-img-bottom to an <img> to place the image at the top or at the bottom inside the card. Note that we have added the image outside of the .card-body to span the entire width:
+
+Example
+<div class="card" style="width:400px">
+  <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+  <div class="card-body">
+    <h4 class="card-title">John Doe</h4>
+    <p class="card-text">Some example text.</p>
+    <a href="#" class="btn btn-primary">See Profile</a>
+  </div>
+</div>
+Card Image Overlays
+Card image
+John Doe
+Some example text some example text. Some example text some example text. Some example text some example text. Some example text some example text.
+
+Turn an image into a card background and use .card-img-overlay to add text on top of the image:
+
+Example
+<div class="card" style="width:500px">
+  <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+  <div class="card-img-overlay">
+    <h4 class="card-title">John Doe</h4>
+    <p class="card-text">Some example text.</p>
+    <a href="#" class="btn btn-primary">See Profile</a>
+  </div>
+</div>
+
+                                                      Bootstrap 5 Dropdowns
+Basic Dropdown
+A dropdown menu is a toggleable menu that allows the user to choose one value from a predefined list:
+
+Example
+<div class="dropdown">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Link 1</a></li>
+    <li><a class="dropdown-item" href="#">Link 2</a></li>
+    <li><a class="dropdown-item" href="#">Link 3</a></li>
+  </ul>
+</div>
+Example Explained
+The .dropdown class indicates a dropdown menu.
+
+To open the dropdown menu, use a button or a link with a class of .dropdown-toggle and the data-bs-toggle="dropdown" attribute.
+
+Add the .dropdown-menu class to a <div> element to actually build the dropdown menu. Then add the .dropdown-item class to each element (links or buttons) inside the dropdown menu.
+
+Dropdown Divider
+The .dropdown-divider class is used to separate links inside the dropdown menu with a thin horizontal border:
+
+Example
+<li><hr class="dropdown-divider"></hr></li>
+ADVERTISEMENT
+
+Dropdown Header
+The .dropdown-header class is used to add headers inside the dropdown menu:
+
+Example
+<li><h5 class="dropdown-header">Dropdown header 1</h5></li>
+Disable and Active items
+Highlight a specific dropdown item with the .active class (adds a blue background color).
+
+To disable an item in the dropdown menu, use the .disabled class (gets a light-grey text color and a "no-parking-sign" icon on hover):
+
+Example
+<li><a class="dropdown-item" href="#">Normal</a></li>
+<li><a class="dropdown-item active" href="#">Active</a></li>
+<li><a class="dropdown-item disabled" href="#">Disabled</a></li>
+Dropdown Position
+You can also create a "dropend" or "dropstart" menu, by adding the .dropend or .dropstart class to the dropdown element. Note that the caret/arrow is added automatically:
+
+Dropright
+<div class="dropdown dropend">
+Dropleft
+<div class="dropdown dropstart">
+Dropdown Menu Right
+To right-align the dropdown menu, add the .dropdown-menu-end class to the element with .dropdown-menu:
+
+Example
+<div class="dropdown-menu dropdown-menu-end">
+Dropup
+If you want the dropdown menu to expand upwards instead of downwards, change the <div> element with class="dropdown" to "dropup":
+
+Example
+<div class="dropup">
+Dropdown Text
+The .dropdown-item-text class is used to add plain text to a dropdown item, or used on links for default link styling.
+
+Example
+<ul class="dropdown-menu">
+  <li><a class="dropdown-item" href="#">Link 1</a></li>
+  <li><a class="dropdown-item" href="#">Link 2</a></li>
+  <li><a class="dropdown-item" href="#">Link 3</a></li>
+  <li><a class="dropdown-item-text" href="#">Text Link</a></li>
+  <li><span class="dropdown-item-text">Just Text</span></li>
+</ul>
+Grouped Buttons with a Dropdown
+Example
+<div class="btn-group">
+  <button type="button" class="btn btn-primary">Apple</button>
+  <button type="button" class="btn btn-primary">Samsung</button>
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Sony</button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Tablet</a></li>
+      <li><a class="dropdown-item" href="#">Smartphone</a></li>
+    </ul>
+  </div>
+</div>
+Vertical Button Group w/ Dropdown
+Example
+<div class="btn-group-vertical">
+  <button type="button" class="btn btn-primary">Apple</button>
+  <button type="button" class="btn btn-primary">Samsung</button>
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Sony</button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Tablet</a></li>
+      <li><a class="dropdown-item" href="#">Smartphone</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Continue from BS5 Collapse -->
+
+
+
+
+
+
 
 
 
