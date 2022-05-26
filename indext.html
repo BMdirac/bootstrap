@@ -1136,11 +1136,317 @@ Example
 </body>
 </html>
 
+                                            <!---------------------------- Chapter 3 ------------------------------------>
 
-<!-- Continues from BS5 Button Groups -->
+                                                        Bootstrap 5 Button Groups
+Button Groups
+Bootstrap 5 allows you to group a series of buttons together (on a single line) in a button group:
+
+Use a <div> element with class .btn-group to create a button group:
+
+Example
+<div class="btn-group">
+  <button type="button" class="btn btn-primary">Apple</button>
+  <button type="button" class="btn btn-primary">Samsung</button>
+  <button type="button" class="btn btn-primary">Sony</button>
+</div>
+Tip: Instead of applying button sizes to every button in a group, use class .btn-group-lg for a large button group or the .btn-group-sm for a small button group:
+
+Large Buttons:
+Default Buttons:
+Small Buttons:
+Example
+<div class="btn-group btn-group-lg">
+  <button type="button" class="btn btn-primary">Apple</button>
+  <button type="button" class="btn btn-primary">Samsung</button>
+  <button type="button" class="btn btn-primary">Sony</button>
+</div>
+Vertical Button Groups
+Bootstrap 5 also supports vertical button groups:
+
+Use the class .btn-group-vertical to create a vertical button group:
+
+Example
+<div class="btn-group-vertical">
+  <button type="button" class="btn btn-primary">Apple</button>
+  <button type="button" class="btn btn-primary">Samsung</button>
+  <button type="button" class="btn btn-primary">Sony</button>
+</div>
+ADVERTISEMENT
+
+Button Groups Side by Side
+Button groups are "inline" by default, which makes them appear side by side when you have multiple groups:
+
+ 
+Example
+<div class="btn-group">
+  <button type="button" class="btn btn-primary">Apple</button>
+  <button type="button" class="btn btn-primary">Samsung</button>
+  <button type="button" class="btn btn-primary">Sony</button>
+</div>
+
+<div class="btn-group">
+  <button type="button" class="btn btn-primary">BMW</button>
+  <button type="button" class="btn btn-primary">Mercedes</button>
+  <button type="button" class="btn btn-primary">Volvo</button>
+</div>
+Nesting Button Groups & Dropdown Menus
+Nest button groups to create dropdown menus (you will learn more about dropdowns in a later chapter):
+
+Example
+<div class="btn-group">
+  <button type="button" class="btn btn-primary">Apple</button>
+  <button type="button" class="btn btn-primary">Samsung</button>
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Sony</button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Tablet</a>
+      <a class="dropdown-item" href="#">Smartphone</a>
+    </div>
+  </div>
+</div>
+
+                                                            Bootstrap 5 Badges
+Badges
+Badges are used to add additional information to any content:
+
+Example heading New
+Example heading New
+Example heading New
+Example heading New
+Example heading New
+Example heading New
+Use the .badge class together with a contextual class (like .bg-secondary) within <span> elements to create rectangular badges. Note that badges scale to match the size of the parent element (if any):
+
+Example
+<h1>Example heading <span class="badge bg-secondary">New</span></h1>
+<h2>Example heading <span class="badge bg-secondary">New</span></h2>
+<h3>Example heading <span class="badge bg-secondary">New</span></h3>
+<h4>Example heading <span class="badge bg-secondary">New</span></h4>
+<h5>Example heading <span class="badge bg-secondary">New</span></h5>
+<h6>Example heading <span class="badge bg-secondary">New</span></h6>
+Contextual Badges
+Primary Secondary Success Danger Warning Info Light Dark
+Use any of the contextual classes (.bg-*) to change the color of a badge:
+
+Example
+<span class="badge bg-primary">Primary</span>
+<span class="badge bg-secondary">Secondary</span>
+<span class="badge bg-success">Success</span>
+<span class="badge bg-danger">Danger</span>
+<span class="badge bg-warning">Warning</span>
+<span class="badge bg-info">Info</span>
+<span class="badge bg-light">Light</span>
+<span class="badge bg-dark">Dark</span>
+ADVERTISEMENT
+
+Pill Badges
+Primary Secondary Success Danger Warning Info Light Dark
+Use the .rounded-pill class to make the badges more round:
+
+Example
+<span class="badge rounded-pill bg-primary">Primary</span>
+<span class="badge rounded-pill bg-secondary">Secondary</span>
+<span class="badge rounded-pill bg-success">Success</span>
+<span class="badge rounded-pill bg-danger">Danger</span>
+<span class="badge rounded-pill bg-warning">Warning</span>
+<span class="badge rounded-pill bg-info">Info</span>
+<span class="badge rounded-pill bg-light">Light</span>
+<span class="badge rounded-pill bg-dark">Dark</span>
+Badge inside an Element
+An example of using a badge inside a button:
+
+Example
+<button type="button" class="btn btn-primary">
+  Messages <span class="badge bg-danger">4</span>
+</button>
+
+                                                      Bootstrap 5 Progress Bars
+Basic Progress Bar
+A progress bar can be used to show how far a user is in a process.
+
+To create a default progress bar, add a .progress class to a container element and add the .progress-bar class to its child element. Use the CSS width property to set the width of the progress bar:
+
+Example
+<div class="progress">
+  <div class="progress-bar" style="width:70%"></div>
+</div>
+Progress Bar Height
 
 
 
+The height of the progress bar is 1rem (usually 16px) by default. Use the CSS height property to change it. Note that you must set the same height for the progress container and the progress bar:
+
+Example
+<div class="progress" style="height:20px">
+  <div class="progress-bar" style="width:40%;height:20px"></div>
+</div>
+Progress Bar Labels
+Add text inside the progress bar to show the visible percentage:
+
+70%
+Example
+<div class="progress">
+  <div class="progress-bar" style="width:70%">70%</div>
+</div>
+ADVERTISEMENT
+
+Colored Progress Bars
+
+By default, the progress bar is blue (primary). Use any of the contextual background classes to change its color:
+
+Example
+<!-- Blue -->
+<div class="progress">
+  <div class="progress-bar" style="width:10%"></div>
+</div>
+
+<!-- Green -->
+<div class="progress">
+  <div class="progress-bar bg-success" style="width:20%"></div>
+</div>
+
+<!-- Turquoise -->
+<div class="progress">
+  <div class="progress-bar bg-info" style="width:30%"></div>
+</div>
+
+<!-- Orange -->
+<div class="progress">
+   <div class="progress-bar bg-warning" style="width:40%"></div>
+</div>
+
+<!-- Red -->
+<div class="progress">
+  <div class="progress-bar bg-danger" style="width:50%"></div>
+</div>
+
+<!-- White -->
+<div class="progress border">
+  <div class="progress-bar bg-white" style="width:60%"></div>
+</div>
+
+<!-- Grey -->
+<div class="progress">
+  <div class="progress-bar bg-secondary" style="width:70%"></div>
+</div>
+
+<!-- Light Grey -->
+<div class="progress border">
+  <div class="progress-bar bg-light" style="width:80%"></div>
+</div>
+
+<!-- Dark Grey -->
+<div class="progress">
+  <div class="progress-bar bg-dark" style="width:90%"></div>
+</div>
+Striped Progress Bars
+
+
+
+
+
+Use the .progress-bar-striped class to add stripes to the progress bars:
+
+Example
+<div class="progress">
+  <div class="progress-bar progress-bar-striped" style="width:40%"></div>
+</div>
+Animated Progress Bar
+
+Add the .progress-bar-animated class to animate the progress bar:
+
+Example
+<div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%"></div>
+Multiple Progress Bars
+Progress bars can also be stacked:
+
+Free Space
+Warning
+Danger
+Example
+<div class="progress">
+  <div class="progress-bar bg-success" style="width:40%">
+    Free Space
+  </div>
+  <div class="progress-bar bg-warning" style="width:10%">
+    Warning
+  </div>
+  <div class="progress-bar bg-danger" style="width:20%">
+    Danger
+  </div>
+</div>
+
+                                                Bootstrap 5 Spinners
+Spinners
+To create a spinner/loader, use the .spinner-border class:
+
+Loading..
+Example
+<div class="spinner-border"></div>
+Colored Spinners
+Use any text color utilites to add a color to the spinner:
+
+Loading.. Loading.. Loading.. Loading.. Loading.. Loading.. Loading.. Loading.. Loading..
+Example
+<div class="spinner-border text-muted"></div>
+<div class="spinner-border text-primary"></div>
+<div class="spinner-border text-success"></div>
+<div class="spinner-border text-info"></div>
+<div class="spinner-border text-warning"></div>
+<div class="spinner-border text-danger"></div>
+<div class="spinner-border text-secondary"></div>
+<div class="spinner-border text-dark"></div>
+<div class="spinner-border text-light"></div>
+ADVERTISEMENT
+
+Growing Spinners
+Use the .spinner-grow class if you want the spinner/loader to grow instead of "spin":
+
+Loading.. Loading.. Loading.. Loading.. Loading.. Loading.. Loading.. Loading.. Loading..
+Example
+<div class="spinner-grow text-muted"></div>
+<div class="spinner-grow text-primary"></div>
+<div class="spinner-grow text-success"></div>
+<div class="spinner-grow text-info"></div>
+<div class="spinner-grow text-warning"></div>
+<div class="spinner-grow text-danger"></div>
+<div class="spinner-grow text-secondary"></div>
+<div class="spinner-grow text-dark"></div>
+<div class="spinner-grow text-light"></div>
+Spinner Size
+Use .spinner-border-sm or .spinner-grow-sm to create a smaller spinner:
+
+Loading.. Loading..
+Example
+<div class="spinner-border spinner-border-sm"></div>
+<div class="spinner-grow spinner-grow-sm"></div>
+Spinner Buttons
+You can also add spinners to a button, with or without text:
+
+   
+Example
+<button class="btn btn-primary">
+  <span class="spinner-border spinner-border-sm"></span>
+</button>
+
+<button class="btn btn-primary">
+  <span class="spinner-border spinner-border-sm"></span>
+  Loading..
+</button>
+
+<button class="btn btn-primary" disabled>
+  <span class="spinner-border spinner-border-sm"></span>
+  Loading..
+</button>
+
+<button class="btn btn-primary" disabled>
+  <span class="spinner-grow spinner-grow-sm"></span>
+  Loading..
+</button>
+
+
+<!-- Continue from BS5 pagination -->
 
 
 
