@@ -3536,8 +3536,1289 @@ Align Self
 
                                           <!---------------------------- Chapter 5 ------------------------------------>
 
-<!-- Continue from BS5 Forms -->
+                                                Bootstrap 5 Forms
+Stacked Form
+All textual <input> and  <textarea> elements with class .form-control get proper form styling:
 
+Email:
+Enter email
+Password:
+Enter password
+Remember me
+Example
+<form action="/action_page.php">
+  <div class="mb-3 mt-3">
+    <label for="email" class="form-label">Email:</label>
+    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+  </div>
+  <div class="mb-3">
+    <label for="pwd" class="form-label">Password:</label>
+    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+  </div>
+  <div class="form-check mb-3">
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" name="remember"> Remember me
+    </label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+Also note that we add a .form-label class to each label element to ensure correct padding.
+
+Checkboxes have different markup. They are wrapped around a container element with .form-check, and labels have a class of .form-check-label, while checkboxes and radio buttons use .form-check-input.
+
+Textarea
+Comments:
+Example
+<label for="comment">Comments:</label>
+<textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+ADVERTISEMENT
+
+Form Row/Grid (Inline Forms)
+Enter email
+Enter password
+If you want your form elements to appear side by side, use .row and .col:
+
+Example
+<form>
+  <div class="row">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Enter email" name="email">
+    </div>
+    <div class="col">
+      <input type="password" class="form-control" placeholder="Enter password" name="pswd">
+    </div>
+  </div>
+</form>
+You will learn much more about columns and rows in the Bootstrap Grids Chapter.
+
+Form Control Size
+Large input
+
+Normal input
+
+Small input
+
+You can change the size of .form-control inputs with .form-control-lg or .form-control-sm:
+
+Example
+<input type="text" class="form-control form-control-lg" placeholder="Large input">
+<input type="text" class="form-control" placeholder="Normal input">
+<input type="text" class="form-control form-control-sm" placeholder="Small input">
+Disabled and Readonly
+Normal input
+Disabled input
+Readonly input
+Use the disabled and/or readonly attributes to disable the input field:
+
+Example
+<input type="text" class="form-control" placeholder="Normal input">
+<input type="text" class="form-control" placeholder="Disabled input" disabled>
+<input type="text" class="form-control" placeholder="Readonly input" readonly>
+Plain text Inputs
+Plaintext input
+Normal input
+Use the .form-control-plaintext class to style an input field without borders, but keep proper marigins and padding:
+
+Example
+<input type="text" class="form-control-plaintext" placeholder="Plaintext input">
+<input type="text" class="form-control" placeholder="Normal input">
+Color Picker
+
+To style an input with type="color" properly, use the .form-control-color class:
+
+Example
+<input type="color" class="form-control form-control-color" value="#CCCCCC">
+
+                                                              
+                                                                  Bootstrap 5 Select
+Select Menu
+Select menu (select one):
+1
+
+Multiple select menu (hold ctrl or shift (or drag with the mouse) to select more than one):12345
+Select menus are used if you want to allow the user to pick from multiple options.
+
+To style a select menu in Bootstrap 5, add the .form-select class to the <select> element:
+
+Example
+<select class="form-select">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+</select>
+Select Menu Size
+
+1
+
+
+1
+
+
+1
+Use the .form-select-lg or .form-select-sm class to change the size of the select menu:
+
+Example
+<select class="form-select form-select-lg">
+<select class="form-select">
+<select class="form-select form-select-sm">
+ADVERTISEMENT
+
+Disabled Select Menu
+
+1
+Use the disabled attribute to disable the select menu:
+
+Example
+<select class="form-select" disabled>
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+</select>
+Data Lists
+Bootstrap will also style data lists, which is a list of pre-defined options for an <input> element:
+
+Choose your browser from the list:
+Example
+<label for="browser" class="form-label">Choose your browser from the list:</label>
+<input class="form-control" list="browsers" name="browser" id="browser">
+<datalist id="browsers">
+  <option value="Edge">
+  <option value="Firefox">
+  <option value="Chrome">
+  <option value="Opera">
+  <option value="Safari">
+</datalist>
+
+                                                      Bootstrap 5 Checkboxes and Radio buttons
+Checkboxes
+Checkboxes are used if you want the user to select any number of options from a list of preset options.
+
+Option 1
+Option 2
+Disabled Option
+Example
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" checked>
+  <label class="form-check-label">Option 1</label>
+</div>
+Example Explained
+To style checkboxes, use a wrapper element with class="form-check" to ensure proper margins for labels and checkboxes.
+
+Then, add the .form-check-label class to label elements, and .form-check-input to style checkboxes properly inside the .form-check container.
+
+Use the checked attribute if you want the checkbox to be checked by default.
+
+Radio buttons
+Radio buttons are used if you want to limit the user to just one selection from a list of preset options.
+
+Option 1
+Option 2
+Option 3
+Example
+<div class="form-check">
+  <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>Option 1
+  <label class="form-check-label" for="radio1"></label>
+</div>
+<div class="form-check">
+  <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Option 2
+  <label class="form-check-label" for="radio2"></label>
+</div>
+<div class="form-check">
+  <input type="radio" class="form-check-input" disabled>Option 3
+  <label class="form-check-label"></label>
+</div>
+Toggle Switches
+If you want your checkbox to be styled as a toggle switch, use the .form-switch class together with the .form-check container:
+
+Dark Mode
+Example
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode" value="yes" checked>
+  <label class="form-check-label" for="mySwitch">Dark Mode</label>
+</div>
+
+                                                                  Bootstrap 5 Range
+Custom Range
+To style a range menu, add the .form-range class to the input element with type="range":
+
+Custom range 
+
+
+Default range 
+Example
+<label for="customRange" class="form-label">Custom range</label>
+<input type="range" class="form-range" id="customRange">
+Steps
+By default, the interval between the range numbers is 1. You can change it by using the step attribute:
+
+
+Example
+<input type="range" class="form-range" step="10">
+Min and Max
+By default, the mininmum value is 0 and maximum value is 100. You can use the min and/or max attribute change it:
+
+
+Example
+<input type="range" class="form-range" min="0" max="4">
+
+                                                                  Bootstrap 5 Input Groups
+Input Groups
+The .input-group class is a container to enhance an input by adding an icon, text or a button in front or behind the input field as a "help text".
+
+To style the specified help text, use the .input-group-text class:
+
+@
+Username
+Your Email
+@example.com
+Example
+<form>
+  <div class="input-group">
+    <span class="input-group-text">@</span>
+    <input type="text" class="form-control" placeholder="Username">
+  </div>
+
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Your Email">
+    <span class="input-group-text">@example.com</span>
+  </div>
+</form>
+Input Group Size
+Use the .input-group-sm class for small input groups and .input-group-lg for large inputs groups:
+
+Small
+Default
+Large
+Example
+<div class="input-group mb-3 input-group-sm">
+   <span class="input-group-text">Small</span>
+  <input type="text" class="form-control">
+</div>
+
+<div class="input-group mb-3">
+  <span class="input-group-text">Default</span>
+  <input type="text" class="form-control">>
+</div>
+
+<div class="input-group mb-3 input-group-lg">
+  <span class="input-group-text">Large</span>
+  <input type="text" class="form-control">
+</div>
+Multiple Inputs and Helpers
+Add multiple inputs or addons:
+
+Person
+First Name
+Last Name
+One
+Two
+Three
+Example
+<!-- Multiple inputs -->
+<div class="input-group mb-3">
+  <span class="input-group-text">Person</span>
+  <input type="text" class="form-control" placeholder="First Name">
+  <input type="text" class="form-control" placeholder="Last Name">
+</div>
+
+<!-- Multiple addons / help text -->
+<div class="input-group mb-3">
+  <span class="input-group-text">One</span>
+  <span class="input-group-text">Two</span>
+  <span class="input-group-text">Three</span>
+  <input type="text" class="form-control">
+</div>
+ADVERTISEMENT
+
+Input Group with Checkboxes and Radios
+You can also use checkboxes or radio buttons instead of text:
+
+
+Some text
+
+Some text
+Example
+<div class="input-group mb-3">
+  <div class="input-group-text">
+    <input type="checkbox">
+  </div>
+  <input type="text" class="form-control" placeholder="Some text">
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-text">
+    <input type="radio">
+  </div>
+  <input type="text" class="form-control" placeholder="Some text">
+</div>
+Input Group Buttons
+Some text
+Search
+Something clever..
+Example
+<div class="input-group mb-3">
+  <button class="btn btn-outline-primary" type="button">Basic Button</button>
+  <input type="text" class="form-control" placeholder="Some text">
+</div>
+
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Search">
+  <button class="btn btn-success" type="submit">Go</button>
+</div>
+
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Something clever..">
+  <button class="btn btn-primary" type="button">OK</button>
+  <button class="btn btn-danger" type="button">Cancel</button>
+</div>
+Input Group with Dropdown Button
+Add a dropdown button in the input group. Note that you don't need the .dropdown wrapper, as you normally would.
+
+Username
+Example
+<div class="input-group mt-3 mb-3">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Link 1</a></li>
+    <li><a class="dropdown-item" href="#">Link 2</a></li>
+    <li><a class="dropdown-item" href="#">Link 3</a></li>
+  </ul>
+  <input type="text" class="form-control" placeholder="Username">
+</div>
+
+                                                            Bootstrap 5 Form Floating Labels
+Floating Labels / Animated Labels
+By default, when using labels, they normally appear on top of the input field:
+
+Email Label
+Enter email
+With floating labels, you can insert the label inside the input field, and make them float/animate when you click on the input field:
+
+Enter email
+Email
+Enter password
+Password
+Example
+<div class="form-floating mb-3 mt-3">
+  <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
+  <label for="email">Email</label>
+</div>
+
+<div class="form-floating mt-3 mb-3">
+  <input type="text" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+  <label for="pwd">Password</label>
+</div>
+Notes on floating labels: The <label> elements must come after the <input> element, and the placeholder attribute is required for each <input> element (even though it is not shown).
+
+Textarea
+It also works for textareas:
+
+Comment goes here
+Comments
+Example
+<div class="form-floating">
+  <textarea class="form-control" id="comment" name="text" placeholder="Comment goes here"></textarea>
+  <label for="comment">Comments</label>
+</div>
+Select Menus
+You can also use "floating-labels" on select menus. However, they will not float/get animated. The label will always appear in the top left corner, inside the select menu:
+
+
+1
+Select list (select one):
+Example
+<div class="form-floating">
+  <select class="form-select" id="sel1" name="sellist">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+  </select>
+  <label for="sel1" class="form-label">Select list (select one):</label>
+</div>
+
+                                                              Bootstrap 5 Form Validation
+Form Validation
+Username:
+Enter username
+Please fill out this field.
+Password:
+Enter password
+Please fill out this field.
+I agree on blabla.
+Check this checkbox to continue.
+You can use different validation classes to provide valuable feedback to users. Add either .was-validated or .needs-validation to the <form> element, depending on whether you want to provide validation feedback before or after submitting the form. The input fields will have a green (valid) or red (invalid) border to indicate what's missing in the form. You can also add a .valid-feedback or .invalid-feedback message to tell the user explicitly what's missing, or needs to be done before submitting the form.
+
+Example
+In this example, we use .was-validated to indicate what's missing before submitting the form:
+
+<form action="/action_page.php" class="was-validated">
+  <div class="mb-3 mt-3">
+    <label for="uname" class="form-label">Username:</label>
+    <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+    <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+  </div>
+  <div class="mb-3">
+    <label for="pwd" class="form-label">Password:</label>
+    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+    <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+  </div>
+  <div class="form-check mb-3">
+    <input class="form-check-input" type="checkbox" id="myCheck" name="remember" required>
+    <label class="form-check-label" for="myCheck">I agree on blabla.</label>
+    <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Check this checkbox to continue.</div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+                                            <!---------------------------- Chapter 6 ------------------------------------>
+                                                      Bootstrap 5 Grid System
+The Grid System
+Bootstrap's grid system is built with flexbox and allows up to 12 columns across the page.
+
+If you do not want to use all 12 columns individually, you can group the columns together to create wider columns:
+
+span 1	span 1	span 1	span 1	span 1	span 1	span 1	span 1	span 1	span 1	span 1	span 1
+ span 4	 span 4	 span 4
+span 4	span 8
+span 6	span 6
+span 12
+The grid system is responsive, and the columns will re-arrange automatically depending on the screen size.
+
+Make sure that the sum adds up to 12 or fewer (it is not required that you use all 12 available columns).
+
+Grid Classes
+The Bootstrap 5 grid system has six classes:
+
+.col- (extra small devices - screen width less than 576px)
+.col-sm- (small devices - screen width equal to or greater than 576px)
+.col-md- (medium devices - screen width equal to or greater than 768px)
+.col-lg- (large devices - screen width equal to or greater than 992px)
+.col-xl- (xlarge devices - screen width equal to or greater than 1200px)
+.col-xxl- (xxlarge devices - screen width equal to or greater than 1400px)
+The classes above can be combined to create more dynamic and flexible layouts.
+
+Tip: Each class scales up, so if you want to set the same widths for sm and md, you only need to specify sm.
+
+Basic Structure of a Bootstrap 5 Grid
+The following is a basic structure of a Bootstrap 5 grid:
+
+<!-- Control the column width, and how they should appear on different devices -->
+<div class="row">
+  <div class="col-*-*"></div>
+  <div class="col-*-*"></div>
+</div>
+<div class="row">
+  <div class="col-*-*"></div>
+  <div class="col-*-*"></div>
+  <div class="col-*-*"></div>
+</div>
+
+<!-- Or let Bootstrap automatically handle the layout -->
+<div class="row">
+  <div class="col"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+First example: create a row (<div class="row">). Then, add the desired number of columns (tags with appropriate .col-*-* classes). The first star (*) represents the responsiveness: sm, md, lg, xl or xxl, while the second star represents a number, which should add up to 12 for each row.
+
+Second example: instead of adding a number to each col, let bootstrap handle the layout, to create equal width columns: two "col" elements = 50% width to each col, while three cols = 33.33% width to each col. Four cols = 25% width, etc. You can also use .col-sm|md|lg|xl|xxl to make the columns responsive.
+
+ADVERTISEMENT
+
+Grid Options
+The following table summarizes how the Bootstrap 5 grid system works across different screen sizes:
+
+ 	Extra small (<576px)	Small (>=576px)	Medium (>=768px)	Large (>=992px)	Extra Large (>=1200px)	XXL (>=1400px)
+Class prefix	.col-	.col-sm-	.col-md-	.col-lg-	.col-xl-	.col-xxl-
+Grid behaviour	Horizontal at all times	Collapsed to start, horizontal above breakpoints	Collapsed to start, horizontal above breakpoints	Collapsed to start, horizontal above breakpoints	Collapsed to start, horizontal above breakpoints	Collapsed to start, horizontal above breakpoints
+Container width	None (auto)	540px	720px	960px	1140px	1320px
+Suitable for	Portrait phones	Landscape phones	Tablets	Laptops	Laptops and Desktops	Laptops and Desktops
+# of columns	12	12	12	12	12	12
+Gutter width	1.5rem (.75rem on each side of a column)	1.5rem (.75rem on each side of a column)	1.5rem (.75rem on each side of a column)	1.5rem (.75rem on each side of a column)	1.5rem (.75rem on each side of a column)	1.5rem (.75rem on each side of a column)
+Nestable	Yes	Yes	Yes	Yes	Yes	Yes
+Offsets	Yes	Yes	Yes	Yes	Yes	Yes
+Column ordering	Yes	Yes	Yes	Yes	Yes	Yes
+
+                                                              Bootstrap 5 Grid Stacked to horizontal
+Grid Example: Stacked-to-horizontal
+Let's create a basic grid system that starts out stacked on extra small devices, before becoming horizontal on larger devices.
+
+The following example shows a simple "stacked-to-horizontal" two-column layout, meaning it will result in a 50%/50% split on all screens, except for extra small screens, which it will automatically stack (100%):
+
+col-sm-6
+col-sm-6
+Example: Stacked-to-horizontal
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6 bg-primary">
+      <p>Lorem ipsum...</p>
+    </div>
+    <div class="col-sm-6 bg-dark">
+      <p>Sed ut perspiciatis...</p>
+    </div>
+  </div>
+</div>
+Tip: The numbers in the .col-sm-* classes indicates how many columns the div should span (out of 12). So, .col-sm-1 spans 1 column, .col-sm-4 spans 4 columns, .col-sm-6 spans 6 columns, etc.
+
+Note: Make sure that the sum adds up to 12 or fewer (it is not required that you use all 12 available columns):
+
+Tip: You can turn any full-width layout into a fixed-width responsive layout, by changing the .container-fluid class to .container:
+
+Example: Responsive Container
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <p>Lorem ipsum...</p>
+    </div>
+    <div class="col-sm-6">
+      <p>Sed ut perspiciatis...</p>
+    </div>
+  </div>
+</div>
+ADVERTISEMENT
+
+Auto Layout Columns
+In Bootstrap 5, there is an easy way to create equal width columns for all devices: just remove the number from .col-size-* and only use the .col-size class on a specified number of col elements. Bootstrap will recognize how many columns there are, and each column will get the same width. The size classes (sm, md, etc.) determines when the columns should be responsive:
+
+<!-- Two columns: 50% width on all screens, except for extra small (100% width) -->
+<div class="row">
+  <div class="col-sm">1 of 2</div>
+  <div class="col-sm">2 of 2</div>
+</div>
+
+<!-- Four columns: 25% width on all screens, except for extra small (100% width)-->
+<div class="row">
+  <div class="col-sm">1 of 4</div>
+  <div class="col-sm">2 of 4</div>
+  <div class="col-sm">3 of 4</div>
+  <div class="col-sm">4 of 4</div>
+</div>
+
+                                                      Bootstrap 5 Grid Extra Small
+Extra Small Grid Example
+ 	XSmall	Small	Medium	Large	Extra Large	XXL
+Class prefix	.col-	.col-sm-	.col-md-	.col-lg-	.col-xl-	.col-xxl-
+Screen width	<576px	>=576px	>=768px	>=992px	>=1200px	>=1400px
+Assume we have a simple layout with two columns. We want the columns to split 25%/75% for ALL devices.
+
+We will add the following classes to our two columns:
+
+<div class="col-3">....</div>
+<div class="col-9">....</div>
+The following example will result in a 25%/75% split on all devices (extra small, small, medium, large, xlarge and xxlarge).
+
+col-3
+col-9
+Example
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3 bg-primary">
+      <p>Lorem ipsum...</p>
+    </div>
+    <div class="col-9 bg-dark">
+      <p>Sed ut perspiciatis...</p>
+    </div>
+  </div>
+</div>
+Note: Make sure that the sum adds up to 12 or fewer (it is not required that you use all 12 available columns):
+
+For a 33.3%/66.6% split, you would use .col-4 and .col-8 (and for a 50%/50% split, you would use .col-6 and .col-6):
+
+col-4
+col-8
+
+col-6
+col-6
+Example
+<!-- 33.3%/66.6% split -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4 bg-primary">
+      <p>Lorem ipsum...</p>
+    </div>
+    <div class="col-8 bg-dark">
+      <p>Sed ut perspiciatis...</p>
+    </div>
+  </div>
+</div>
+
+<!-- 50%/50% split -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6 bg-primary">
+      <p>Lorem ipsum...</p>
+    </div>
+    <div class="col-6 bg-dark">
+      <p>Sed ut perspiciatis...</p>
+    </div>
+  </div>
+</div>
+ADVERTISEMENT
+
+Auto Layout Columns
+In Bootstrap 5, there is an easy way to create equal width columns for all devices: just remove the number from .col-* and only use the .col class on a specified number of col elements. Bootstrap will recognize how many columns there are, and each column will get the same width:
+
+<!-- Two columns: 50% width-->
+<div class="row">
+  <div class="col">1 of 2</div>
+  <div class="col">2 of 2</div>
+</div>
+
+<!-- Four columns: 25% width-->
+<div class="row">
+  <div class="col">1 of 4</div>
+  <div class="col">2 of 4</div>
+  <div class="col">3 of 4</div>
+  <div class="col">4 of 4</div>
+</div>
+1 of 2
+2 of 2
+
+1 of 4
+2 of 4
+3 of 4
+4 of 4
+The next chapter shows how to add a different split percent for small devices.
+
+                                                              Bootstrap 5 Grid Small
+Small Grid Example
+ 	XSmall	Small	Medium	Large	Extra Large	XXL
+Class prefix	.col-	.col-sm-	.col-md-	.col-lg-	.col-xl-	.col-xxl-
+Screen width	<576px	>=576px	>=768px	>=992px	>=1200px	>=1400px
+Assume we have a simple layout with two columns. We want the columns to be split 25%/75% for small devices.
+
+Small devices are defined as having a screen width from 576 pixels to 767 pixels.
+
+For small devices we will use the .col-sm-* classes.
+
+We will add the following classes to our two columns:
+
+<div class="col-sm-3">....</div>
+<div class="col-sm-9">....</div>
+The following example will result in a 25%/75% split on small (and medium, large, xlarge and xxlarge) devices. On extra small devices, it will automatically stack (100%):
+
+.col-sm-3
+.col-sm-9
+Example
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 bg-primary">
+      <p>Lorem ipsum...</p>
+    </div>
+    <div class="col-sm-9 bg-dark">
+      <p>Sed ut perspiciatis...</p>
+    </div>
+  </div>
+</div>
+Note: Make sure that the sum adds up to 12 or fewer (it is not required that you use all 12 available columns):
+
+For a 33.3%/66.6% split, you would use .col-sm-4 and .col-sm-8 (and for a 50%/50% split, you would use .col-sm-6 and .col-sm-6):
+
+.col-sm-4
+.col-sm-8
+
+.col-sm-6
+.col-sm-6
+Example
+<!-- 33.3/66.6% split: -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4 bg-primary">
+      <p>Lorem ipsum...</p>
+    </div>
+    <div class="col-sm-8 bg-dark">
+      <p>Sed ut perspiciatis...</p>
+    </div>
+  </div>
+</div>
+
+<!-- 50%/50% split: -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6 bg-primary">
+      <p>Lorem ipsum...</p>
+    </div>
+    <div class="col-sm-6 bg-dark">
+      <p>Sed ut perspiciatis...</p>
+    </div>
+  </div>
+</div>
+ADVERTISEMENT
+
+Auto Layout Columns
+In Bootstrap 5, there is an easy way to create equal width columns for all devices: just remove the number from .col-sm-* and only use the .col-sm class on a specified number of col elements. Bootstrap will recognize how many columns there are, and each column will get the same width.
+
+If the screen size is less than 576px, the columns will stack horizontally:
+
+<!-- Two columns: 50% width on all screens, except for extra small (100% width) -->
+<div class="row">
+  <div class="col-sm">1 of 2</div>
+  <div class="col-sm">2 of 2</div>
+</div>
+
+<!-- Four columns: 25% width on all screens, except for extra small (100% width)-->
+<div class="row">
+  <div class="col-sm">1 of 4</div>
+  <div class="col-sm">2 of 4</div>
+  <div class="col-sm">3 of 4</div>
+  <div class="col-sm">4 of 4</div>
+</div>
+1 of 2
+2 of 2
+
+1 of 4
+2 of 4
+3 of 4
+4 of 4
+The next chapter shows how to add a different split percent for medium devices.
+
+                                                  Bootstrap 5 Grid Medium
+Medium Grid Example
+ 	XSmall	Small	Medium	Large	Extra Large	XXL
+Class prefix	.col-	.col-sm-	.col-md-	.col-lg-	.col-xl-	.col-xxl-
+Screen width	<576px	>=576px	>=768px	>=992px	>=1200px	>=1400px
+In the previous chapter, we presented a grid example with classes for small devices. We used two divs (columns) and we gave them a 25%/75% split:
+
+<div class="col-sm-3">....</div>
+<div class="col-sm-9">....</div>
+But on medium devices the design may be better as a 50%/50% split.
+
+Medium devices are defined as having a screen width from 768 pixels to 991 pixels.
+
+For medium devices we will use the .col-md-* classes:
+
+<div class="col-sm-3 col-md-6">....</div>
+<div class="col-sm-9 col-md-6">....</div>
+Now Bootstrap is going to say "at the small size, look at classes with -sm- in them and use those. At the medium size, look at classes with -md- in them and use those".
+
+The following example will result in a 25%/75% split on small devices and a 50%/50% split on medium (and large, xlarge and xxlarge) devices. On extra small devices, it will automatically stack (100%):
+
+.col-sm-3 .col-md-6
+.col-sm-9 .col-md-6
+Example
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-6">
+      <p>Lorem ipsum...</p>
+    </div>
+    <div class="col-sm-9 col-md-6">
+      <p>Sed ut perspiciatis...</p>
+    </div>
+  </div>
+</div>
+Note: Make sure that the sum adds up to 12 or fewer (it is not required that you use all 12 available columns):
+
+Using Only Medium
+In the example below, we only specify the .col-md-6 class (without .col-sm-*). This means that medium, large, extra large and XXL devices will split 50%/50% - because the class scales up. However, for small and extra small devices, it will stack vertically (100% width):
+
+Example
+<div class="row">
+  <div class="col-md-6">
+    <p>Lorem ipsum...</p>
+  </div>
+  <div class="col-md-6">
+    <p>Sed ut perspiciatis...</p>
+  </div>
+</div>
+ADVERTISEMENT
+
+Auto Layout Columns
+In Bootstrap 5, there is an easy way to create equal width columns for all devices: just remove the number from .col-md-* and only use the .col-md class on a specified number of col elements. Bootstrap will recognize how many columns there are, and each column will get the same width.
+
+If the screen size is less than 768px, the columns will stack horizontally:
+
+<!-- Two columns: 50% width on medium and up-->
+<div class="row">
+  <div class="col-md">1 of 2</div>
+  <div class="col-md">2 of 2</div>
+</div>
+
+<!-- Four columns: 25% width on medium and up -->
+<div class="row">
+  <div class="col-md">1 of 4</div>
+  <div class="col-md">2 of 4</div>
+  <div class="col-md">3 of 4</div>
+  <div class="col-md">4 of 4</div>
+</div>
+1 of 2
+2 of 2
+
+1 of 4
+2 of 4
+3 of 4
+4 of 4
+The next chapter shows how to add a different split percent for large devices.
+
+                                                            Bootstrap 5 Grid Large
+Large Grid Example
+ 	XSmall	Small	Medium	Large	Extra Large	XXL
+Class prefix	.col-	.col-sm-	.col-md-	.col-lg-	.col-xl-	.col-xxl-
+Screen width	<576px	>=576px	>=768px	>=992px	>=1200px	>=1400px
+In the previous chapter, we presented a grid example with classes for small and medium devices. We used two divs (columns) and we gave them a 25%/75% split on small devices, and a 50%/50% split on medium devices:
+
+<div class="col-sm-3 col-md-6">....</div>
+<div class="col-sm-9 col-md-6">....</div>
+But on large devices the design may be better as a 33%/66% split.
+
+Large devices are defined as having a screen width from 992 pixels to 1199 pixels.
+
+For large devices we will use the .col-lg-* classes:
+
+<div class="col-sm-3 col-md-6 col-lg-4">....</div>
+<div class="col-sm-9 col-md-6 col-lg-8">....</div>
+Now Bootstrap is going to say "at the small size, look at classes with -sm- in them and use those. At the medium size, look at classes with -md- in them and use those. At the large size, look at classes with the word -lg- in them and use those.
+
+The following example will result in a 25%/75% split on small devices, a 50%/50% split on medium devices, and a 33%/66% split on large, xlarge and xxlarge devices. On extra small devices, it will automatically stack (100%):
+
+.col-sm-3 .col-md-6 .col-lg-4
+.col-sm-9 .col-md-6 .col-lg-8
+Example
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-6 col-lg-4">
+      <p>Lorem ipsum...</p>
+    </div>
+    <div class="col-sm-9 col-md-6 col-lg-8">
+      <p>Sed ut perspiciatis...</p>
+    </div>
+  </div>
+</div>
+Note: Make sure that the sum adds up to 12 or fewer (it is not required that you use all 12 available columns):
+
+Using Only Large
+In the example below, we only specify the .col-lg-6 class (without .col-md-* and/or .col-sm-*). This means that large, xlarge and xxlarge devices will split 50%/50%. However, for medium, small AND extra small devices, it will stack vertically (100% width):
+
+Example
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6">
+      <p>Lorem ipsum...</p>
+    </div>
+    <div class="col-lg-6">
+      <p>Sed ut perspiciatis...</p>
+    </div>
+  </div>
+</div>
+ADVERTISEMENT
+
+Auto Layout Columns
+In Bootstrap 5, there is an easy way to create equal width columns for all devices: just remove the number from .col-lg-* and only use the .col-lg class on a specified number of col elements. Bootstrap will recognize how many columns there are, and each column will get the same width.
+
+If the screen size is less than 992px, the columns will stack horizontally:
+
+<!-- Two columns: 50% width on large and up-->
+<div class="row">
+  <div class="col-lg">1 of 2</div>
+  <div class="col-lg">2 of 2</div>
+</div>
+
+<!-- Four columns: 25% width on large and up -->
+<div class="row">
+  <div class="col-lg">1 of 4</div>
+  <div class="col-lg">2 of 4</div>
+  <div class="col-lg">3 of 4</div>
+  <div class="col-lg">4 of 4</div>
+</div>
+
+                                                        Bootstrap 5 Grid Extra Large
+Extra Large Grid Example
+ 	XSmall	Small	Medium	Large	Extra Large	XXL
+Class prefix	.col-	.col-sm-	.col-md-	.col-lg-	.col-xl-	.col-xxl-
+Screen width	<576px	>=576px	>=768px	>=992px	>=1200px	>=1400px
+In the previous chapter, we presented a grid example with classes for small, medium and large devices. We used two divs (columns) and we gave them a 25%/75% split on small devices, and a 50%/50% split on medium devices and a 33%/66% split on large devices:
+
+<div class="col-sm-3 col-md-6 col-lg-4">....</div>
+<div class="col-sm-9 col-md-6 col-lg-8">....</div>
+But on xlarge devices the design may be better as a 20%/80% split.
+
+Extra large devices are defined as having a screen width from 1200 pixels and above.
+
+For xlarge devices we will use the .col-xl-* classes:
+
+<div class="col-sm-3 col-md-6 col-lg-4 col-xl-2">....</div>
+<div class="col-sm-9 col-md-6 col-lg-8 col-xl-10">....</div>
+The following example will result in a 25%/75% split on small devices, a 50%/50% split on medium devices, a 33%/66% split on large devices and a 20%/80% split on xlarge and xxlarge devices. On extra small devices, it will automatically stack (100%):
+
+col-sm-3 col-md-6 col-lg-4 col-xl-2
+col-sm-9 col-md-6 col-lg-8 col-xl-10
+Example
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-6 col-lg-4 col-xl-2">
+      <p>Lorem ipsum...</p>
+    </div>
+    <div class="col-sm-9 col-md-6 col-lg-8 col-xl-10">
+      <p>Sed ut perspiciatis...</p>
+    </div>
+  </div>
+</div>
+Note: Make sure that the sum always adds up to 12.
+
+Using Only XLarge
+In the example below, we only specify the .col-xl-6 class (without .col-lg-*, .col-md-* and/or .col-sm-*). This means that xlarge and xxlarge devices will split 50%/50%. However, for large, medium, small AND extra small devices, it will stack vertically (100% width):
+
+Example
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-6">
+      <p>Lorem ipsum...</p>
+    </div>
+    <div class="col-xl-6">
+      <p>Sed ut perspiciatis...</p>
+    </div>
+  </div>
+</div>
+ADVERTISEMENT
+
+Auto Layout Columns
+In Bootstrap 5, there is an easy way to create equal width columns for all devices: just remove the number from .col-xl-* and only use the .col-xl class on a specified number of col elements. Bootstrap will recognize how many columns there are, and each column will get the same width.
+
+If the screen size is less than 1200px, the columns will stack horizontally:
+
+<!-- Two columns: 50% width on xlarge and up-->
+<div class="row">
+  <div class="col-xl">1 of 2</div>
+  <div class="col-xl">2 of 2</div>
+</div>
+
+<!-- Four columns: 25% width on xlarge and up -->
+<div class="row">
+  <div class="col-xl">1 of 4</div>
+  <div class="col-xl">2 of 4</div>
+  <div class="col-xl">3 of 4</div>
+  <div class="col-xl">4 of 4</div>
+</div>
+
+                                                              Bootstrap 5 Grid XXL
+XXL Grid Example
+ 	XSmall	Small	Medium	Large	Extra Large	XXL
+Class prefix	.col-	.col-sm-	.col-md-	.col-lg-	.col-xl-	.col-xxl-
+Screen width	<576px	>=576px	>=768px	>=992px	>=1200px	>=1400px
+XXL devices are defined as having a screen width from 1400 pixels and above.
+
+The following example will result in a 50%/50% split on medium, large and extra large devices, and a 25%/75% split on XXL devices. On small and extra small devices, it will automatically stack (100%):
+
+col-md-6 col-xxl-3
+col-md-6 col-xxl-9
+Example
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 col-xxl-3">
+      <p>Lorem ipsum...</p>
+    </div>
+    <div class="col-md-6 col-xxl-9">
+      <p>Sed ut perspiciatis...</p>
+    </div>
+  </div>
+</div>
+Note: Make sure that the sum always adds up to 12.
+
+Using Only XXL
+In the example below, we only specify the .col-xxl-6 class (without .col-md-*, and/or .col-sm-*). This means that xxlarge devices will split 50%/50%. However, for extra large, large, medium, small AND extra small devices, it will stack vertically (100% width):
+
+Example
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xxl-6">
+      <p>Lorem ipsum...</p>
+    </div>
+    <div class="col-xxl-6">
+      <p>Sed ut perspiciatis...</p>
+    </div>
+  </div>
+</div>
+ADVERTISEMENT
+
+Auto Layout Columns
+In Bootstrap 5, there is an easy way to create equal width columns for all devices: just remove the number from .col-xxl-* and only use the .col-xxl class on a specified number of col elements. Bootstrap will recognize how many columns there are, and each column will get the same width.
+
+If the screen size is less than 1400px, the columns will stack horizontally:
+
+<!-- Two columns: 50% width on xxl and up-->
+<div class="row">
+  <div class="col-xxl">1 of 2</div>
+  <div class="col-xxl">2 of 2</div>
+</div>
+
+<!-- Four columns: 25% width on xxl and up -->
+<div class="row">
+  <div class="col-xxl">1 of 4</div>
+  <div class="col-xxl">2 of 4</div>
+  <div class="col-xxl">3 of 4</div>
+  <div class="col-xxl">4 of 4</div>
+</div>
+
+                                                          Bootstrap 5 Grid Examples
+Below we have collected some examples of Bootstrap 5 grid layouts.
+
+Three Equal Columns
+Use the .col class on a specified number of elements and Bootstrap will recognize how many elements there are (and create equal-width columns). In the example below, we use three col elements, which gets a width of 33.33% each.
+
+col
+col
+col
+Example
+<div class="row">
+  <div class="col">col</div>
+  <div class="col">col</div>
+  <div class="col">col</div>
+</div>
+Three Equal Columns Using Numbers
+You can also use numbers to control the column width. Just make sure that the sum adds up to 12 or fewer (it is not required that you use all 12 available columns):
+
+col-4
+col-4
+col-4
+Example
+<div class="row">
+  <div class="col-4">col-4</div>
+  <div class="col-4">col-4</div>
+  <div class="col-4">col-4</div>
+</div>
+Three Unequal columns
+To create unequal columns, you have to use numbers. The following example will create a 25%/50%/25% split:
+
+col-3
+col-6
+col-3
+Example
+<div class="row">
+  <div class="col-3">col-3</div>
+  <div class="col-6">col-6</div>
+  <div class="col-3">col-3</div>
+</div>
+ADVERTISEMENT
+
+Setting One Column Width
+However, it is enough to only set the width of one column, and have the sibling columns automatically resize around it. The following example will create a 25%/50%/25% split:
+
+col
+col-6
+col
+Example
+<div class="row">
+  <div class="col">col</div>
+  <div class="col-6">col-6</div>
+  <div class="col">col</div>
+</div>
+More Equal Columns
+1 of 2
+2 of 2
+1 of 4
+2 of 4
+3 of 4
+4 of 4
+1 of 6
+2 of 6
+3 of 6
+4 of 6
+5 of 6
+6 of 6
+Example
+<!-- Two equal columns -->
+<div class="row">
+  <div class="col">1 of 2</div>
+  <div class="col">2 of 2</div>
+</div>
+
+<!-- Four equal columns -->
+<div class="row">
+  <div class="col">1 of 4</div>
+  <div class="col">2 of 4</div>
+  <div class="col">3 of 4</div>
+  <div class="col">4 of 4</div>
+</div>
+
+<!-- Six equal columns -->
+<div class="row">
+  <div class="col">1 of 6</div>
+  <div class="col">2 of 6</div>
+  <div class="col">3 of 6</div>
+  <div class="col">4 of 6</div>  
+  <div class="col">5 of 6</div>
+  <div class="col">6 of 6</div>
+</div>
+Row Cols
+You can also control how many columns that should appear next to each other (regardless of how many cols), with the .row-cols-* classes:
+
+1 of 2
+2 of 2
+
+1 of 4
+2 of 4
+3 of 4
+4 of 4
+
+1 of 6
+2 of 6
+3 of 6
+4 of 6
+5 of 6
+6 of 6
+Example
+<div class="row row-cols-1">
+  <div class="col">1 of 2</div>
+  <div class="col">2 of 2</div>
+</div>
+
+<div class="row row-cols-2">
+  <div class="col">1 of 4</div>
+  <div class="col">2 of 4</div>
+  <div class="col">3 of 4</div>
+  <div class="col">4 of 4</div>
+</div>
+
+<div class="row row-cols-3">
+  <div class="col">1 of 6</div>
+  <div class="col">2 of 6</div>
+  <div class="col">3 of 6</div>
+  <div class="col">4 of 6</div>  
+  <div class="col">5 of 6</div>
+  <div class="col">6 of 6</div>
+</div>
+More Unequal Columns
+1 of 2
+2 of 2
+1 of 4
+2 of 4
+3 of 4
+4 of 4
+1 of 4
+2 of 4
+3 of 4
+4 of 4
+Example
+<!-- Two Unequal Columns -->
+<div class="row">
+  <div class="col-8">1 of 2</div>
+  <div class="col-4">2 of 2</div>
+</div>
+
+<!-- Four Unequal Columns -->
+<div class="row">
+  <div class="col-2">1 of 4</div>
+  <div class="col-2">2 of 4</div>
+  <div class="col-2">3 of 4</div>
+  <div class="col-6">4 of 4</div>
+</div>
+
+<!-- Setting two column widths -->
+<div class="row">
+  <div class="col-4">1 of 4</div>
+  <div class="col-6">2 of 4</div>
+  <div class="col">3 of 4</div>
+  <div class="col">4 of 4</div>
+</div>
+Equal Height
+If one of the column is taller than the other (due to text or CSS height), the rest will follow:
+
+Lorem ipsum dolor sit amet, cibo sensibus interesset no sit. Et dolor possim volutpat qui. No malis tollit iriure eam, et vel tale zril blandit, rebum vidisse nostrum qui eu. No nostrud dolorem legendos mea, ea eum mucius oporteat platonem.Eam an case scribentur, ei clita causae cum, alia debet eu vel.
+col
+col
+Example
+<div class="row">
+  <div class="col">Lorem ipsum...</div>
+  <div class="col">col</div>
+  <div class="col">col</div>
+</div>
+Nested Columns
+col-8
+col-6
+col-6
+col-4
+The following example shows how to create a two column layout, with another two columns inside one of the columns:
+
+Example
+<div class="row">
+  <div class="col-8">
+    .col-8
+    <div class="row">
+      <div class="col-6">.col-6</div>
+      <div class="col-6">.col-6</div>
+    </div>
+  </div>
+  <div class="col-4">.col-4</div>
+</div>
+Responsive Classes
+The Bootstrap 5 grid system has five classes:
+
+.col- (extra small devices - screen width less than 576px)
+.col-sm- (small devices - screen width equal to or greater than 576px)
+.col-md- (medium devices - screen width equal to or greater than 768px)
+.col-lg- (large devices - screen width equal to or greater than 992px)
+.col-xl- (xlarge devices - screen width equal to or greater than 1200px)
+.col-xxl- (xxl devices - screen width equal to or greater than 1400px)
+The classes above can be combined to create more dynamic and flexible layouts.
+
+Tip: Each class scales up, so if you wish to set the same widths for sm and md, you only need to specify sm.
+
+Stacked to Horizontal
+col-sm-9
+col-sm-3
+col-sm
+col-sm
+col-sm
+The following example shows how to create a column layout that starts out stacked on extra small devices, before becoming horizontal on larger devices (sm, md, lg and xl):
+
+Example
+<div class="row">
+  <div class="col-sm-9">col-sm-9</div>
+  <div class="col-sm-3">col-sm-3</div>
+</div>
+<div class="row">
+  <div class="col-sm">col-sm</div>
+  <div class="col-sm">col-sm</div>
+  <div class="col-sm">col-sm</div>
+</div>
+Mix and Match
+col-6 col-sm-9
+col-6 col-sm-3
+col-7 col-lg-8
+col-5 col-lg-4
+col-sm-3 col-md-6 col-lg-4
+col-sm-9 col-md-6 col-lg-8
+Example
+<!-- 50%/50% split on extra small devices and 75%/25% split on larger devices -->
+<div class="row">
+  <div class="col-6 col-sm-9">col-6 col-sm-9</div>
+  <div class="col-6 col-sm-3">col-6 col-sm-3</div>
+</div>
+
+<!-- 58%/42% split on extra small, small and medium devices and 66.3%/33.3% split on large and xlarge devices -->
+<div class="row">
+  <div class="col-7 col-lg-8">col-7 col-lg-8</div>
+  <div class="col-5 col-lg-4">col-5 col-lg-4</div>
+</div>
+
+<!-- 25%/75% split on small devices, a 50%/50% split on medium devices, and a 33%/66% split on large and xlarge devices. On extra small devices, it will automatically stack (100%) -->
+<div class="row">
+  <div class="col-sm-3 col-md-6 col-lg-4">col-sm-3 col-md-6 col-lg-4</div>
+  <div class="col-sm-9 col-md-6 col-lg-8">col-sm-9 col-md-6 col-lg-8</div>
+</div>
+No Gutters
+To change the gutters (extra space) between columns, use any of the .g-1|2|3|4|5 classes (.g-4 is default).
+
+To remove the gutter completely, use .g-0:
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+Example
+<div class="row g-0">
+
+
+
+
+
+  
 
 
 
